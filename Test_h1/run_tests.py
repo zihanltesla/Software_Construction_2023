@@ -471,17 +471,17 @@ class Test_runners(TestFileOperations):
 
         print("\n", "-"*50)  
         for test in all_tests:
-            print(f"Test #{test_num}: {test.__name__}")
+            print(f"🔨Test #{test_num}: {test.__name__}")
             
             start_time = time.time()  
             try:
                 test()
                 results["pass"] += 1
                 duration = time.time() - start_time 
-                print(f"Status: PASSED\nTime taken: {duration:.6f} seconds\n") 
+                print(f"Status: ✅PASSED\nTime taken: {duration:.6f} seconds\n") 
             except AssertionError as ae:
                 results["fail"] += 1
-                print(f"Status: FAILED\nReason: {ae}\n")
+                print(f"Status: ❌FAILED\nReason: {ae}\n")
             except Exception as e:
                 results["error"] += 1
                 print(f"Status: ERROR\nReason: {e}\n")
